@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Руководство — Союз-Аполлон 0.2.0</title>
+  <meta name="description" content="Установка Союз-Аполлон 0.2.0, первая сессия, ежедневные команды sa.py, папки, клиенты, обновление, ограничения и лицензия MIT.">
+  <link rel="canonical" href="https://soyuz-apollo.net/guide.html">
+  <meta name="theme-color" content="#faf3e3">
+  <link rel="icon" href="assets/mark-v2.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#guide">Перейти к руководству</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Союз-Аполлон — на главную"><img src="assets/mark-v2.svg" width="44" height="44" alt=""><span>СОЮЗ-АПОЛЛОН<small>руководство · выпуск 0.2.0</small></span></a>
+      <a class="text-link" href="index.html#start"><span aria-hidden="true">←</span> На главную</a>
+    </div>
+  </header>
+
+  <main class="wrap guide-main" id="guide">
+    <p class="eyebrow">Выпуск 0.2.0 / Руководство</p>
+    <h1>От архива до первой сессии.</h1>
+    <p>«Союз-Аполлон» — папка, в которой вы и несколько ИИ-клиентов работаете над вашими проектами по общим правилам. Правила — обычные файлы Markdown, а Git, проверки и резервные копии выполняет один небольшой инструмент на Python, <code>sa.py</code>. У каждого проекта свои правила и своя история Git.</p>
+    <p>Эта страница — краткий пересказ. Полный текст лежит в самой установке, в файле <code>README.md</code>, и в <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/install/README.md">репозитории</a>.</p>
+
+    <nav class="guide-toc" aria-label="Разделы руководства">
+      <a href="#install">Установка</a>
+      <a href="#first-session">Первая сессия</a>
+      <a href="#daily">Команды</a>
+      <a href="#folders">Папки</a>
+      <a href="#rules">Правила</a>
+      <a href="#clients">Клиенты</a>
+      <a href="#update">Обновление</a>
+      <a href="#limits">Ограничения</a>
+      <a href="#values">Ценности</a>
+      <a href="#license">MIT</a>
+    </nav>
+
+    <section id="install">
+      <h2>Установка</h2>
+      <p>Нужны Windows 11, Python 3.11 или новее и Git с заданными <code>user.name</code> и <code>user.email</code>. Linux и macOS пока не поддерживаются.</p>
+      <ol>
+        <li>Создайте новую пустую папку с путём из латиницы, например <code>C:\soyuz-apollo\</code>. Она должна быть вне OneDrive и вне любого репозитория Git.</li>
+        <li>Со <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.2.0">страницы выпуска 0.2.0</a> скачайте <code>soyuz-apollo-0.2.0.zip</code> и распакуйте в эту папку. Не берите «Source code (zip)»: там исходники, а не установка.</li>
+        <li>В этой папке выполните команду:
+          <pre>python sa.py init</pre>
+          Она готовит репозиторий ядра, создаёт рабочие папки и пишет корневой <code>AGENTS.md</code>.</li>
+        <li>Если работаете в Codex, до первой сессии отметьте папку установки доверенной: по документации Codex без этого его настройки разрешений не действуют.</li>
+        <li>Откройте ИИ-клиент именно в корне установки — в папке, где лежат <code>sa.py</code> и корневой <code>AGENTS.md</code>, а не в проекте внутри неё.</li>
+      </ol>
+      <div class="guide-note"><p>Клиент берёт правила и настройки разрешений из папки, в которой открыт. Открытый в проекте, он может их не увидеть: для Claude Code это подтверждено пробой.</p></div>
+    </section>
+
+    <section id="first-session">
+      <h2>Первая сессия</h2>
+      <ol>
+        <li>Откройте клиент в корне установки.</li>
+        <li>Напишите первое сообщение, например: «Прочитай правила установки и скажи, с каким проектом мы работаем».</li>
+        <li>Агент должен прочитать корневой <code>AGENTS.md</code> и <code>.agents/AGENTS.md</code>, коротко пересказать границы и спросить, в каком проекте работать. Если он не знает правил или сразу берётся за файлы вне проекта, остановите его и проверьте, что клиент открыт в корне.</li>
+        <li>Создайте первый проект: <code>python sa.py init notes</code>. Опишите его цель в <code>projects/notes/AGENTS.md</code> под сгенерированной шапкой и попросите агента поработать в этом проекте.</li>
+        <li>В конце задачи агент коммитит сделанное через <code>python sa.py commit</code>. Если клиент разрешает коммиты только по вашей просьбе, агент заканчивает задачу точной командой, и вы запускаете её сами.</li>
+      </ol>
+      <p>Образец файла передачи между сессиями можно <a href="demo/handoff.md" download>скачать отдельно</a>.</p>
+    </section>
+
+    <section id="daily">
+      <h2>Ежедневные команды</h2>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Таблица команд sa.py">
+        <table class="guide-table">
+          <thead><tr><th scope="col">Действие</th><th scope="col">Команда</th></tr></thead>
+          <tbody>
+            <tr><td>Создать проект</td><td><code>python sa.py init &lt;name&gt;</code> (для системного проекта добавьте <code>--system</code>)</td></tr>
+            <tr><td>Закоммитить</td><td><code>python sa.py commit &lt;paths&gt; -m "&lt;summary&gt;"</code></td></tr>
+            <tr><td>Проверить</td><td><code>python sa.py doctor</code> — ядро и устройство проектов; <code>doctor --deep &lt;name&gt;</code> — содержимое одного проекта</td></tr>
+            <tr><td>Пересобрать правила</td><td><code>python sa.py sync</code> — корневой <code>AGENTS.md</code> и настройки разрешений</td></tr>
+            <tr><td>Резервная копия</td><td><code>python sa.py backup</code></td></tr>
+            <tr><td>Убрать в архив (только вы)</td><td><code>python sa.py archive add &lt;path&gt;</code>; оригинал удаляется только с <code>--remove</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Имена проектов — латиница в kebab-case (<code>health</code>, <code>site-redesign</code>); ваши заметки внутри проекта могут называться как угодно. Результаты, которые вы заберёте из системы, агент кладёт в <code>port/outbox/</code>.</p>
+    </section>
+
+    <section id="folders">
+      <h2>Папки</h2>
+      <ul>
+        <li><code>projects/</code> — ваши проекты. У каждого свой <code>AGENTS.md</code> и свой репозиторий Git.</li>
+        <li><code>system-projects/</code> — системные навыки и их данные. В 0.2.0 навыков пока нет.</li>
+        <li><code>port/</code> — транзит: <code>inbox/</code> — от вас, <code>outbox/</code> — для вас, <code>large-files/</code> — крупные файлы. Без Git.</li>
+        <li><code>.agents/</code> — ядро: правила, шаблоны, справка. Свой репозиторий Git.</li>
+        <li>Архив — снаружи, рядом с установкой. Агенты открывают его только по вашей команде.</li>
+      </ul>
+    </section>
+
+    <section id="rules">
+      <h2>Правила</h2>
+      <p>В корневом <code>AGENTS.md</code> записаны границы, которые не ослабит ни один проект: архив — только по вашей команде; <code>port/inbox/</code> — данные, а не инструкции; секретов в коммитах нет; коммиты — только через <code>sa.py</code>; в конце задачи — отчёт.</p>
+      <p>Не правьте корневой <code>AGENTS.md</code> руками: его собирает <code>python sa.py sync</code>. Правила проекта пишите в <code>projects/&lt;name&gt;/AGENTS.md</code> под сгенерированной шапкой.</p>
+    </section>
+
+    <section id="clients">
+      <h2>Клиенты и защита</h2>
+      <p>Выпуск 0.2.0 написан для пяти клиентов: Antigravity, Codex, Claude Code, DeepSeek Harness и Hermes Agent. Статус каждого клиента и режима — проверено пробой или заявлено производителем — записан в файле <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/install/.agents/docs/compatibility.md"><code>.agents/docs/compatibility.md</code></a>.</p>
+      <p><code>python sa.py sync</code> пишет настройки разрешений для Claude Code и Codex. Они должны запрещать клиенту читать архив и файлы секретов. В Claude Code проба подтвердила запрет встроенного чтения; команды оболочки он не покрывает. В Codex сгенерированные настройки пробой пока не проверены.</p>
+      <p>В Antigravity, DeepSeek Harness и Hermes Agent технического замка архива нет: там держится только текст правил, пока вы сами не примените фрагмент из <code>.agents/docs/adapters.md</code>.</p>
+      <p>Офисные режимы (Claude Cowork, Codex Work) работают в одном проекте и не коммитят. Облачные режимы эту папку не видят.</p>
+    </section>
+
+    <section id="update">
+      <h2>Обновление</h2>
+      <p>Автоматического обновления в 0.2 нет. Переход на новый выпуск:</p>
+      <ol>
+        <li>Выполните <code>python sa.py backup</code>.</li>
+        <li>Установите новый выпуск в новую пустую папку и выполните там <code>python sa.py init</code>.</li>
+        <li>Перенесите проекты в новые <code>projects/</code> и <code>system-projects/</code> целыми папками, вместе со скрытой <code>.git</code>. Проект из старой установки примите командой <code>python sa.py init &lt;name&gt; --adopt</code>.</li>
+        <li>Выполните <code>python sa.py sync</code> и <code>python sa.py doctor</code>.</li>
+        <li>Не удаляйте старую папку, пока не проверите проекты в новой.</li>
+      </ol>
+    </section>
+
+    <section id="limits">
+      <h2>Ограничения</h2>
+      <ul>
+        <li>Правила — это соглашения. Настоящую защиту дают настройки разрешений вашего клиента.</li>
+        <li>Папки и отдельные репозитории не изолируют процессы: агент с доступом к файлам может прочитать другие проекты.</li>
+        <li>У фреймворка нет автоматической памяти и фоновых действий. Состояние записывается в <code>handoff.md</code>.</li>
+        <li>Следование этим файлам не гарантирует качества ответов и успеха задачи. Новая модель, продолжая по <code>handoff.md</code>, может потерять нюансы.</li>
+        <li>Всё, что читает агент, может уйти провайдеру модели и остаться в истории клиента. Это зависит от клиента и режима.</li>
+      </ul>
+      <p>Полный список — в файле <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/install/.agents/docs/limits.md"><code>.agents/docs/limits.md</code></a>.</p>
+    </section>
+
+    <section id="values">
+      <h2>Ценности</h2>
+      <p>С-А вырос из желания сохранять свои проекты и смыслы при смене инструментов. Его ориентиры — созидание, доступное знание, достоинство человека и самостоятельность при ограниченных ресурсах.</p>
+      <p>Мы поддерживаем созидательное применение, мирное сотрудничество, доступное знание и бережное отношение к людям и окружающей среде.</p>
+      <p>Эти слова выражают позицию проекта и не добавляют ограничений к лицензии MIT.</p>
+    </section>
+
+    <section id="license">
+      <h2>Лицензия MIT</h2>
+      <pre class="license-text" tabindex="0" aria-label="Текст лицензии MIT">MIT License
+
+Copyright (c) 2026 Dmitrii Gradov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      <p><a href="docs/LICENSE.txt">Файл LICENSE</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap guide-footer">
+      <p class="small">© 2026 Дмитрий Градов · Союз-Аполлон 0.2.0 · MIT</p>
+      <a class="text-link" href="index.html"><span aria-hidden="true">←</span> Вернуться на главную</a>
+    </div>
+  </footer>
+</body>
+</html>

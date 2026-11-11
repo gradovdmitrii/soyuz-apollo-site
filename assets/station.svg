@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" fill="none" aria-labelledby="station-title station-desc">
+  <title id="station-title">Модульный корабль «Союз-Аполлон»</title>
+  <desc id="station-desc">Ядро соединяет проекты, системное пространство и порт. Архив показан отдельным объёмом вне обычного маршрута чтения.</desc>
+  <defs>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0v7" stroke="#31596d" stroke-opacity=".16" stroke-width="1.5"/></pattern>
+    <pattern id="solar" width="22" height="18" patternUnits="userSpaceOnUse"><rect width="22" height="18" stroke="#31596d" stroke-width=".7" fill="#e0e5df"/></pattern>
+    <pattern id="plot" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" stroke="#d6d1c5" stroke-width=".7"/></pattern>
+  </defs>
+  <rect x="50" y="55" width="700" height="440" fill="url(#plot)" opacity=".52"/>
+  <g stroke="#bcb9ac" stroke-width=".8" opacity=".75">
+    <circle cx="406" cy="281" r="203" stroke-dasharray="3 7"/><circle cx="406" cy="281" r="148"/>
+    <path d="M45 281h710M406 45v466" stroke-dasharray="7 6"/><path d="M45 45h18m-9-9v18M744 45h18m-9-9v18M45 504h18m-9-9v18M744 504h18m-9-9v18"/>
+  </g>
+  <g transform="rotate(-15 408 285)" stroke="#34454b" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <g opacity=".95"><path d="M303 191v-74M303 335v89"/><path d="M198 111h209v72H198zM198 354h209v72H198z" fill="url(#solar)"/><path d="M300 111v72M300 354v72" stroke-width="4"/><path d="M204 117h197v60H204zM204 360h197v60H204z" stroke="#31596d" stroke-width=".7"/></g>
+    <path d="M160 277h501" stroke="#b4aaa0" stroke-dasharray="5 5"/>
+    <g data-module="archive"><path class="hull" d="M91 248h71q14 0 14 27t-14 27H91z" fill="#e9e4d9"/><ellipse cx="91" cy="275" rx="14" ry="27" fill="#f4f0e6"/><path d="M104 251v48m13-49v50m30-50v50" stroke-width=".8"/><path d="M176 275h38" stroke-dasharray="3 5" stroke="#a64635"/><circle cx="139" cy="275" r="9" stroke="#a64635"/></g>
+    <g data-module="core"><path class="hull" d="M245 216h128q31 0 31 59t-31 59H245z" fill="#f6f2e8"/><ellipse cx="245" cy="275" rx="29" ry="59" fill="#e4e6dc"/><ellipse cx="245" cy="275" rx="17" ry="40"/><path d="M263 222v105m10-108v112m97-111v110" stroke-width=".8"/><path d="M281 227h69v96h-69z" fill="url(#hatch)" stroke-width=".8"/><path d="M292 253h45v42h-45z" fill="#e1e6df"/><circle cx="315" cy="274" r="12" stroke="#31596d"/><path d="M315 262v24m-12-12h24" stroke-width=".8"/><path d="M285 239h59m-59 73h59" stroke="#a64635" stroke-width="2"/></g>
+    <g data-module="projects"><path d="M404 252h27v46h-27z" fill="#dedfd5"/><path class="hull" d="M448 238h91q22 0 22 37t-22 37h-91l-17-14v-46z" fill="#f7f3e9"/><ellipse cx="448" cy="275" rx="15" ry="37"/><path d="M459 243v64m60-68v72" stroke-width=".8"/><path d="M470 250h35v51h-35z" fill="url(#hatch)"/><circle cx="487" cy="275" r="10" stroke="#31596d"/><path d="M561 258h18v34h-18z" fill="#dedfd5"/><path class="hull" d="M579 244h47l40 17v28l-40 17h-47z" fill="#f7f3e9"/><ellipse cx="579" cy="275" rx="10" ry="31"/><path d="M620 246v58M638 255v40" stroke-width=".8"/><circle cx="605" cy="274" r="9" stroke="#a64635"/><path d="M666 267h14v16h-14M680 275h13"/></g>
+    <g data-module="port"><path d="M344 216v-31h30v31" fill="#dce3da"/><path class="hull" d="M339 137h45l14 17v31h-73v-31z" fill="#f4f0e6"/><ellipse cx="362" cy="138" rx="23" ry="9" fill="#e5e8de"/><path d="M333 159h57M333 169h57" stroke="#31596d" stroke-width=".8"/><path d="M354 128v-17h17v17"/><path d="M362 111V95m0 8h13" stroke="#a64635"/></g>
+    <g data-module="system"><path d="M345 335v29h31v-29" fill="#dce3da"/><path class="hull" d="M328 363h66v54q0 14-33 14t-33-14z" fill="#f7f3e9"/><ellipse cx="361" cy="363" rx="33" ry="12" fill="#e5e8de"/><path d="M338 374v43m46-43v43m-47-24h48" stroke-width=".8"/><path d="M350 384h23v22h-23z" fill="url(#hatch)"/><path d="M350 431v15h23v-15"/></g>
+    <g stroke="#a64635" stroke-width="1"><path d="M227 203l-11-17m27 12v-20M420 231l9-14m-4 25 16-4M562 323l11 11"/></g>
+  </g>
+  <g stroke="#31596d" stroke-width="1" font-family="'Segoe UI',Arial,sans-serif" font-size="13" fill="#31596d">
+    <path fill="none" d="M282 286l-94 96H74"/><circle cx="282" cy="286" r="3" fill="#31596d"/><text x="75" y="404" stroke="none">01 / ОБЩЕЕ ЯДРО</text>
+    <path fill="none" d="M578 229l67-94h83"/><circle cx="578" cy="229" r="3" fill="#31596d"/><text x="571" y="119" stroke="none">02 / ПРОЕКТЫ</text>
+    <path fill="none" d="M396 391l82 70h204"/><circle cx="396" cy="391" r="3" fill="#31596d"/><text x="479" y="483" stroke="none">03 / СИСТЕМНОЕ ПРОСТРАНСТВО</text>
+    <path fill="none" d="M323 158l-40-76H178"/><circle cx="323" cy="158" r="3" fill="#31596d"/><text x="177" y="67" stroke="none">04 / ПОРТ</text>
+    <path fill="none" d="M147 339l-40-102H56"/><text x="55" y="222" stroke="none">05 / АРХИВ</text>
+  </g>
+  <g fill="#69716d" font-family="Georgia,serif" font-style="italic" font-size="17"><text x="483" y="533" transform="rotate(-3 483 533)">разные задачи — общий замысел</text></g>
+  <g stroke="#a6aa9f" stroke-width=".8"><path d="M205 524h224m-224-5v10m224-10v10"/><path d="M211 521l-6 3 6 3m212-6 6 3-6 3"/></g>
+  <text x="237" y="544" fill="#677169" font-size="10" letter-spacing="2" font-family="monospace">СХЕМА УСТРОЙСТВА · С-А / 01</text>
+</svg>
+

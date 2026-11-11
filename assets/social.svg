@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="social-title">
+<title id="social-title">Союз-Аполлон. Модели меняются. Ваша работа остаётся у вас.</title>
+<defs><pattern id="grid" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0v12" stroke="#285246" stroke-opacity=".12" stroke-width="1" fill="none"/></pattern></defs>
+<rect width="1200" height="630" fill="#faf3e3"/><rect width="1200" height="630" fill="url(#grid)"/>
+<g font-family="Nunito,'Trebuchet MS','Segoe UI',Arial,sans-serif" font-weight="900" fill="#243e36">
+<text x="64" y="96" font-size="26" fill="#285246">СОЮЗ-АПОЛЛОН</text>
+<text x="60" y="214" font-size="68">Модели</text><text x="60" y="290" font-size="68">меняются.</text>
+<text x="60" y="366" font-size="68">Ваша работа</text><text x="60" y="442" font-size="68" fill="#a13e26">остаётся у вас.</text>
+<text x="64" y="516" font-size="25" font-weight="700">Файловый фреймворк для работы</text>
+<text x="64" y="550" font-size="25" font-weight="700">с несколькими ИИ-клиентами</text></g>
+<rect x="610" y="60" width="540" height="470" fill="#fff9ed" stroke="#243e36" stroke-width="3"/>
+<rect x="632" y="72" width="506" height="446" fill="none" stroke="#243e36" stroke-width="3"/>
+<g fill="none" stroke="#243e36" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="880" cy="250" r="70" fill="#fff9ed"/><circle cx="905" cy="262" r="24" fill="#285246"/>
+<rect x="690" y="150" width="130" height="74" rx="34" fill="#285246" transform="rotate(14 755 187)"/>
+<rect x="950" y="140" width="130" height="62" rx="28" fill="#e8bb54" transform="rotate(14 1015 171)"/>
+<rect x="680" y="290" width="150" height="84" rx="38" fill="#ef996e" transform="rotate(14 755 332)"/>
+<rect x="1000" y="340" width="100" height="62" rx="28" fill="#c8d5b5" transform="rotate(22 1050 371)"/>
+<path d="M945 300l52 44" stroke-dasharray="3 8"/>
+<path d="M632 468h506"/></g>
+<text x="650" y="502" font-family="Nunito,'Trebuchet MS',Arial,sans-serif" font-weight="800" font-size="19" fill="#285246">СОЮЗ-АПОЛЛОН · ВЫПУСК 0.2.0 · MIT</text>
+<rect y="604" width="1200" height="26" fill="#e8bb54"/><path d="M0 604h1200" stroke="#243e36" stroke-width="3"/>
+</svg>
