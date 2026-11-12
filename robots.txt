@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /review.html
+
+Sitemap: https://soyuz-apollo.net/sitemap.xml
