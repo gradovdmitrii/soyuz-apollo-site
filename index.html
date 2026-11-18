@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Союз-Аполлон — файловый фреймворк для работы с несколькими ИИ-клиентами</title>
-  <meta name="description" content="Модели меняются. Ваша работа остаётся у вас. Одна папка, общие правила для нескольких ИИ-клиентов, у каждого проекта свои правила и своя история Git. Выпуск 0.2.0, MIT.">
+  <meta name="description" content="Модели меняются. Ваша работа остаётся у вас. Одна папка, общие правила для нескольких ИИ-клиентов, у каждого проекта свои правила и своя история Git. Выпуск 0.3.0, MIT.">
   <link rel="canonical" href="https://soyuz-apollo.net/">
   <meta property="og:title" content="Союз-Аполлон — модели меняются, ваша работа остаётся у вас">
   <meta property="og:description" content="Файловый фреймворк: одна папка, общие правила для нескольких ИИ-клиентов, у каждого проекта свои правила и своя история Git.">
@@ -72,17 +72,17 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Выпуск 0.2.0 · файловый фреймворк · MIT</p>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Выпуск 0.3.0 · файловый фреймворк · MIT</p>
           <h1 id="hero-title">Модели меняются.<br>Ваша работа <em>остаётся у вас.</em></h1>
           <p class="hero-description">Союз-Аполлон (С-А) — файловый фреймворк для работы с несколькими ИИ-клиентами. Одна папка, общие правила для всех клиентов, а у каждого проекта — свои правила и своя история Git.</p>
           <p class="hero-promise">Начните проект в одном клиенте — закончите в другом.</p>
           <div class="hero-actions">
-            <a class="button accent" href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.2.0">Скачать 0.2.0 <span aria-hidden="true">↗</span></a>
+            <a class="button accent" href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.3.0">Скачать 0.3.0 <span aria-hidden="true">↗</span></a>
             <a class="hero-secondary" href="#structure">Как это устроено <span aria-hidden="true">↓</span></a>
           </div>
           <p class="hero-footnote">Windows 11 <span aria-hidden="true">·</span> Python 3.11+ <span aria-hidden="true">·</span> Git <span aria-hidden="true">·</span> обычные файлы Markdown</p>
           <div class="hero-clients">
-            <p class="gost">Клиенты выпуска 0.2.0</p>
+            <p class="gost">Клиенты выпуска 0.3.0</p>
             <ul>
               <li>Antigravity</li><li>Codex</li><li>Claude Code</li><li>DeepSeek Harness</li><li>Hermes Agent</li>
             </ul>
@@ -102,7 +102,7 @@
                 <svg class="module-highlights" viewBox="0 0 1448 1086" aria-hidden="true" focusable="false">
                   <g data-module="core"><ellipse cx="752" cy="444" rx="226" ry="222"/></g>
                   <g data-module="projects"><ellipse cx="1150" cy="262" rx="286" ry="172" transform="rotate(20 1150 262)"/></g>
-                  <g data-module="system"><ellipse cx="312" cy="300" rx="262" ry="170" transform="rotate(20 312 300)"/></g>
+                  <g data-module="system"><ellipse cx="312" cy="300" rx="262" ry="170" transform="rotate(-20 312 300)"/></g>
                   <g data-module="port"><ellipse cx="336" cy="690" rx="322" ry="186" transform="rotate(17 336 690)"/></g>
                   <g data-module="archive"><ellipse cx="1226" cy="806" rx="218" ry="132" transform="rotate(25 1226 806)"/></g>
                 </svg>
@@ -117,7 +117,7 @@
               <div class="title-block gost" aria-hidden="true">
                 <span class="tb-key">Разраб.</span><span class="tb-val">Д. Градов</span>
                 <span class="tb-title">Союз-Аполлон<small>станция из независимых стыкуемых модулей</small></span>
-                <span class="tb-key">Выпуск</span><span class="tb-val">0.2.0</span>
+                <span class="tb-key">Выпуск</span><span class="tb-val">0.3.0</span>
                 <span class="tb-key">Пров.</span><span class="tb-val">Antigravity · Codex · Claude Code</span>
                 <span class="tb-key">Масса</span><span class="tb-val">один .zip</span>
               </div>
@@ -127,7 +127,7 @@
           <div class="readout" aria-live="polite" aria-atomic="true">
             <article id="hero-core" data-panel-module="core"><span class="readout-number" aria-hidden="true">1</span><div><h2>Ядро держит общие правила</h2><p>Границы и порядок работы, которые действуют во всех проектах. Оно небольшое и целиком помещается в одну папку.</p><code>.agents/</code></div></article>
             <article id="hero-projects" data-panel-module="projects"><span class="readout-number" aria-hidden="true">2</span><div><h2>Каждому делу — свой модуль</h2><p>У проекта свои правила и своя история Git. Один остановился — остальные работают дальше.</p><code>projects/</code></div></article>
-            <article id="hero-system" data-panel-module="system"><span class="readout-number" aria-hidden="true">3</span><div><h2>Место для системных навыков</h2><p>Здесь будут жить системные навыки и их данные. В 0.2.0 навыков ещё нет — только каркас.</p><code>system-projects/</code></div></article>
+            <article id="hero-system" data-panel-module="system"><span class="readout-number" aria-hidden="true">3</span><div><h2>Место для системных навыков</h2><p>Здесь будут жить системные навыки и их данные. В 0.3.0 навыков ещё нет — только каркас.</p><code>system-projects/</code></div></article>
             <article id="hero-port" data-panel-module="port"><span class="readout-number" aria-hidden="true">4</span><div><h2>Порт принимает и отдаёт</h2><p>Во входящие вы кладёте материалы, из исходящих забираете результаты. Крупные файлы лежат отдельно.</p><code>port/inbox/ · port/outbox/ · port/large-files/</code></div></article>
             <article id="hero-archive" data-panel-module="archive"><span class="readout-number" aria-hidden="true">5</span><div><h2>Архив — снаружи, рядом</h2><p>Старые материалы лежат вне установки. Агенты открывают их только по вашей прямой команде.</p><code>папка рядом с установкой</code></div></article>
           </div>
@@ -201,7 +201,7 @@
               <tr><td class="pos">—</td><td><code>AGENTS.md</code></td><th scope="row">Корневые правила</th><td>Вход для клиента, открытого в этой папке. Границы записаны здесь целиком.</td></tr>
               <tr><td class="pos">1</td><td><code>.agents/</code></td><th scope="row">Ядро</th><td>Общие правила, шаблоны, справка. Своя история Git.</td></tr>
               <tr><td class="pos">2</td><td><code>projects/</code></td><th scope="row">Ваши проекты</th><td>У каждого свой <code>AGENTS.md</code> и свой Git.</td></tr>
-              <tr><td class="pos">3</td><td><code>system-projects/</code></td><th scope="row">Системные проекты</th><td>Системные навыки и их данные. В 0.2.0 навыков пока нет.</td></tr>
+              <tr><td class="pos">3</td><td><code>system-projects/</code></td><th scope="row">Системные проекты</th><td>Системные навыки и их данные. В 0.3.0 навыков пока нет.</td></tr>
               <tr><td class="pos">4</td><td><code>port/</code></td><th scope="row">Порт</th><td><code>inbox/</code> — от вас, <code>outbox/</code> — для вас, <code>large-files/</code> — крупные файлы. Без Git.</td></tr>
               <tr><td class="pos">5</td><td><em>снаружи, рядом</em></td><th scope="row">Архив</th><td>Старые материалы вне установки. Агенты открывают их только по вашей прямой команде.</td></tr>
               <tr><td class="pos">—</td><td><code>sa.py</code></td><th scope="row">Инструмент</th><td>Один файл на Python. Git, проверки и резервные копии.</td></tr>
@@ -398,8 +398,8 @@
 
           <div class="status-side">
             <dl class="facts">
-              <div><dt>Платформа</dt><dd>Windows 11, Python 3.11 или новее, Git с заданными <code>user.name</code> и <code>user.email</code>. Linux и macOS пока не поддерживаются.</dd></div>
-              <div><dt>Навыки</dt><dd>В 0.2.0 их нет. Есть каркас: структура папок, правила и <code>sa.py</code>. Системные навыки появятся в следующих выпусках.</dd></div>
+              <div><dt>Платформа</dt><dd>Windows 11, Python 3.11 или новее, Git. Linux и macOS пока не поддерживаются.</dd></div>
+              <div><dt>Навыки</dt><dd>В 0.3.0 их нет. Есть каркас: структура папок, правила, <code>sa.py</code> и <code>update.py</code>. Системные навыки появятся в следующих выпусках.</dd></div>
               <div><dt>Архив</dt><dd>Правила в <code>AGENTS.md</code> — это соглашения. Замок ставят настройки разрешений самого клиента, и <code>sa.py</code> пишет их только для Claude Code и Codex.</dd></div>
               <div><dt>Память</dt><dd>ИИ не помнит всё сам. Автоматической памяти у фреймворка нет: состояние проекта записывается в файлы.</dd></div>
             </dl>
@@ -423,23 +423,22 @@
       <div class="wrap">
         <div class="section-heading">
           <div><p class="eyebrow">Лист 8 / Первый запуск</p><h2 id="start-title">Четыре шага<br>до первой сессии.</h2></div>
-          <p>Понадобятся Windows 11, Python 3.11 или новее и Git с заданными <code>user.name</code> и <code>user.email</code>.</p>
+          <p>Понадобятся Windows 11, Python 3.11 или новее и Git. Команды в терминале вводить не нужно — установку и обновление ведёт ваш ИИ-клиент.</p>
         </div>
         <div class="start-layout">
           <ol class="start-steps">
-            <li><span aria-hidden="true">1</span><div><h3>Скачайте установочный архив</h3><p>На <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.2.0">странице выпуска 0.2.0</a> возьмите файл <code>soyuz-apollo-0.2.0.zip</code>.</p><p class="warn"><b>Не берите «Source code (zip)»</b> — там исходники, а не установка.</p></div></li>
-            <li><span aria-hidden="true">2</span><div><h3>Распакуйте в новую пустую папку</h3><p>Путь — латиницей, вне OneDrive и вне других репозиториев Git. Например, <code>C:\soyuz-apollo\</code>.</p></div></li>
-            <li><span aria-hidden="true">3</span><div><h3>Подготовьте установку</h3><p>В этой папке выполните <code>python sa.py init</code>.</p></div></li>
-            <li><span aria-hidden="true">4</span><div><h3>Откройте ИИ-клиент в этой папке</h3><p>Именно в ней, а не в проекте внутри. В Codex сначала отметьте папку доверенной.</p></div></li>
+            <li><span aria-hidden="true">1</span><div><h3>Создайте пустую папку</h3><p>Путь — латиницей в kebab-case, вне OneDrive и вне других репозиториев Git. Например, <code>C:\soyuz-apollo\</code>.</p></div></li>
+            <li><span aria-hidden="true">2</span><div><h3>Откройте ИИ-клиент в этой папке</h3><p>Именно в ней, а не во вложенной папке. В Codex сначала отметьте папку доверенной.</p></div></li>
+            <li><span aria-hidden="true">3</span><div><h3>Отправьте промпт-визитку</h3><p>Агент скачает <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.3.0">выпуск 0.3.0</a>, сверит контрольную сумму, уточнит имя/почту для Git и название первого проекта, а затем развернёт установку через <code>sa.py</code>.</p><p class="warn"><b>Если качаете архив сами:</b> берите <code>soyuz-apollo-0.3.0.zip</code>, а не «Source code (zip)».</p></div></li>
+            <li><span aria-hidden="true">4</span><div><h3>Откройте новый чат</h3><p>После установки откройте новый чат в этой же папке, чтобы клиент загрузил корневой <code>AGENTS.md</code> и настройки разрешений.</p></div></li>
           </ol>
           <div class="prompt-sheet">
-            <div class="sheet-head gost"><span>Первое сообщение клиенту</span><span aria-hidden="true">образец</span></div>
-            <pre id="starter-prompt" tabindex="0" aria-label="Образец первого сообщения клиенту">Создай проект health через python sa.py init health. Цель: вести план питания на месяц.
-Опиши цель в AGENTS.md проекта и скажи, что сделано.</pre>
+            <div class="sheet-head gost"><span>Промпт-визитка для установки</span><span aria-hidden="true">образец</span></div>
+            <pre id="starter-prompt" tabindex="0" aria-label="Образец промпт-визитки для установки">Установи мне Союз-Аполлон в эту папку по инструкции из README: https://github.com/gradovdmitrii/soyuz-apollo</pre>
             <div class="copy-row"><button class="button ink copy-button" id="copy-prompt" type="button">Скопировать <span aria-hidden="true">⧉</span></button><span id="copy-status" role="status" class="small"></span></div>
             <div class="start-links">
-              <a class="button accent" href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.2.0">Страница выпуска 0.2.0 <span aria-hidden="true">↗</span></a>
-              <a class="text-link" href="guide.html">Руководство: первая сессия и команды <span aria-hidden="true">→</span></a>
+              <a class="button accent" href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.3.0">Страница выпуска 0.3.0 <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="guide.html">Руководство: установка, обновление и команды <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </div>
@@ -484,7 +483,7 @@
         <a href="guide.html">Руководство</a>
         <a href="guide.html#values">Ценности</a>
         <a href="guide.html#license">Лицензия MIT</a>
-        <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.2.0">Выпуск 0.2.0</a>
+        <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.3.0">Выпуск 0.3.0</a>
         <a href="https://github.com/gradovdmitrii/soyuz-apollo">GitHub</a>
       </nav>
     </div>
@@ -493,7 +492,7 @@
         <p>© 2026 Дмитрий Градов · код под лицензией MIT</p>
         <p lang="en" class="footer-en">Soyuz-Apollo is a file framework for working with several AI clients. <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/README.en.md">Read in English</a></p>
       </div>
-      <div class="sheet-stamp gost" aria-hidden="true"><span>С-А</span><span>Выпуск 0.2.0<br>ноябрь 2026</span><span>Листов<br>9</span></div>
+      <div class="sheet-stamp gost" aria-hidden="true"><span>С-А</span><span>Выпуск 0.3.0<br>ноябрь 2026</span><span>Листов<br>9</span></div>
     </div>
   </footer>
 </body>

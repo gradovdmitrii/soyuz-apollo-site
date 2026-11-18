@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Руководство — Союз-Аполлон 0.2.0</title>
-  <meta name="description" content="Установка Союз-Аполлон 0.2.0, первая сессия, ежедневные команды sa.py, папки, клиенты, обновление, ограничения и лицензия MIT.">
+  <title>Руководство — Союз-Аполлон 0.3.0</title>
+  <meta name="description" content="Установка Союз-Аполлон 0.3.0 по промпт-визитке, первая сессия, ежедневные команды sa.py, папки, клиенты, обновление на месте через update.py, ограничения и лицензия MIT.">
   <link rel="canonical" href="https://soyuz-apollo.net/guide.html">
   <meta name="theme-color" content="#faf3e3">
   <link rel="icon" href="assets/mark-v2.svg" type="image/svg+xml">
@@ -14,14 +14,14 @@
   <a class="skip" href="#guide">Перейти к руководству</a>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="Союз-Аполлон — на главную"><img src="assets/mark-v2.svg" width="44" height="44" alt=""><span>СОЮЗ-АПОЛЛОН<small>руководство · выпуск 0.2.0</small></span></a>
+      <a class="brand" href="index.html" aria-label="Союз-Аполлон — на главную"><img src="assets/mark-v2.svg" width="44" height="44" alt=""><span>СОЮЗ-АПОЛЛОН<small>руководство · выпуск 0.3.0</small></span></a>
       <a class="text-link" href="index.html#start"><span aria-hidden="true">←</span> На главную</a>
     </div>
   </header>
 
   <main class="wrap guide-main" id="guide">
-    <p class="eyebrow">Выпуск 0.2.0 / Руководство</p>
-    <h1>От архива до первой сессии.</h1>
+    <p class="eyebrow">Выпуск 0.3.0 / Руководство</p>
+    <h1>От промпт-визитки до первой сессии.</h1>
     <p>«Союз-Аполлон» — папка, в которой вы и несколько ИИ-клиентов работаете над вашими проектами по общим правилам. Правила — обычные файлы Markdown, а Git, проверки и резервные копии выполняет один небольшой инструмент на Python, <code>sa.py</code>. У каждого проекта свои правила и своя история Git.</p>
     <p>Эта страница — краткий пересказ. Полный текст лежит в самой установке, в файле <code>README.md</code>, и в <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/install/README.md">репозитории</a>.</p>
 
@@ -40,15 +40,14 @@
 
     <section id="install">
       <h2>Установка</h2>
-      <p>Нужны Windows 11, Python 3.11 или новее и Git с заданными <code>user.name</code> и <code>user.email</code>. Linux и macOS пока не поддерживаются.</p>
+      <p>Нужны Windows 11, Python 3.11 или новее и Git. Linux и macOS пока не поддерживаются.</p>
       <ol>
-        <li>Создайте новую пустую папку с путём из латиницы, например <code>C:\soyuz-apollo\</code>. Она должна быть вне OneDrive и вне любого репозитория Git.</li>
-        <li>Со <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.2.0">страницы выпуска 0.2.0</a> скачайте <code>soyuz-apollo-0.2.0.zip</code> и распакуйте в эту папку. Не берите «Source code (zip)»: там исходники, а не установка.</li>
-        <li>В этой папке выполните команду:
-          <pre>python sa.py init</pre>
-          Она готовит репозиторий ядра, создаёт рабочие папки и пишет корневой <code>AGENTS.md</code>.</li>
+        <li>Создайте новую пустую папку с путём из латиницы в kebab-case, например <code>C:\soyuz-apollo\</code>. Она должна быть вне OneDrive и вне любого репозитория Git.</li>
         <li>Если работаете в Codex, до первой сессии отметьте папку установки доверенной: по документации Codex без этого его настройки разрешений не действуют.</li>
-        <li>Откройте ИИ-клиент именно в корне установки — в папке, где лежат <code>sa.py</code> и корневой <code>AGENTS.md</code>, а не в проекте внутри неё.</li>
+        <li>Откройте ИИ-клиент именно в корне этой папки и отправьте промпт-визитку:
+          <pre>Установи мне Союз-Аполлон в эту папку по инструкции из README: https://github.com/gradovdmitrii/soyuz-apollo</pre>
+          Если вы уже сами распаковали в папку <code>soyuz-apollo-0.3.0.zip</code> со <a href="https://github.com/gradovdmitrii/soyuz-apollo/releases/tag/v0.3.0">страницы выпуска 0.3.0</a> (не «Source code (zip)»), отправьте: <code>Установи мне Союз-Аполлон по инструкции из README.md</code>.</li>
+        <li>Агент скачает релиз и проверит его контрольную сумму SHA-256, задаст до двух вопросов (имя и почта для Git, если они не настроены, и имя первого проекта в kebab-case с его целью), выполнит <code>python sa.py init</code>, создаст первый проект и попросит открыть <b>новый чат</b>.</li>
       </ol>
       <div class="guide-note"><p>Клиент берёт правила и настройки разрешений из папки, в которой открыт. Открытый в проекте, он может их не увидеть: для Claude Code это подтверждено пробой.</p></div>
     </section>
@@ -56,11 +55,10 @@
     <section id="first-session">
       <h2>Первая сессия</h2>
       <ol>
-        <li>Откройте клиент в корне установки.</li>
-        <li>Напишите первое сообщение, например: «Прочитай правила установки и скажи, с каким проектом мы работаем».</li>
-        <li>Агент должен прочитать корневой <code>AGENTS.md</code> и <code>.agents/AGENTS.md</code>, коротко пересказать границы и спросить, в каком проекте работать. Если он не знает правил или сразу берётся за файлы вне проекта, остановите его и проверьте, что клиент открыт в корне.</li>
-        <li>Создайте первый проект: <code>python sa.py init notes</code>. Опишите его цель в <code>projects/notes/AGENTS.md</code> под сгенерированной шапкой и попросите агента поработать в этом проекте.</li>
-        <li>В конце задачи агент коммитит сделанное через <code>python sa.py commit</code>. Если клиент разрешает коммиты только по вашей просьбе, агент заканчивает задачу точной командой, и вы запускаете её сами.</li>
+        <li>После установки откройте <b>новый чат</b> в корне установки (в папке, где лежат <code>sa.py</code> и корневой <code>AGENTS.md</code>).</li>
+        <li>Напишите первое сообщение, например: «Прочитай правила установки и продолжаем проект <code>health</code>».</li>
+        <li>Агент должен прочитать корневой <code>AGENTS.md</code>, <code>.agents/AGENTS.md</code> и <code>AGENTS.md</code> проекта, коротко пересказать границы и задачу. Если он не знает правил или сразу берётся за файлы вне проекта, остановите его и проверьте, что клиент открыт в корне.</li>
+        <li>В конце задачи агент коммитит сделанное через <code>python sa.py commit</code>. Если клиент разрешает коммиты только по вашей просьбе, агент заканчивает задачу точной командой, и вы запускаете её сами или просите агента выполнить.</li>
       </ol>
       <p>Образец файла передачи между сессиями можно <a href="demo/handoff.md" download>скачать отдельно</a>.</p>
     </section>
@@ -87,7 +85,7 @@
       <h2>Папки</h2>
       <ul>
         <li><code>projects/</code> — ваши проекты. У каждого свой <code>AGENTS.md</code> и свой репозиторий Git.</li>
-        <li><code>system-projects/</code> — системные навыки и их данные. В 0.2.0 навыков пока нет.</li>
+        <li><code>system-projects/</code> — системные навыки и их данные. В 0.3.0 навыков пока нет.</li>
         <li><code>port/</code> — транзит: <code>inbox/</code> — от вас, <code>outbox/</code> — для вас, <code>large-files/</code> — крупные файлы. Без Git.</li>
         <li><code>.agents/</code> — ядро: правила, шаблоны, справка. Свой репозиторий Git.</li>
         <li>Архив — снаружи, рядом с установкой. Агенты открывают его только по вашей команде.</li>
@@ -102,7 +100,7 @@
 
     <section id="clients">
       <h2>Клиенты и защита</h2>
-      <p>Выпуск 0.2.0 написан для пяти клиентов: Antigravity, Codex, Claude Code, DeepSeek Harness и Hermes Agent. Статус каждого клиента и режима — проверено пробой или заявлено производителем — записан в файле <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/install/.agents/docs/compatibility.md"><code>.agents/docs/compatibility.md</code></a>.</p>
+      <p>Выпуск 0.3.0 написан для пяти клиентов: Antigravity, Codex, Claude Code, DeepSeek Harness и Hermes Agent. Статус каждого клиента и режима — проверено пробой или заявлено производителем — записан в файле <a href="https://github.com/gradovdmitrii/soyuz-apollo/blob/HEAD/install/.agents/docs/compatibility.md"><code>.agents/docs/compatibility.md</code></a>.</p>
       <p><code>python sa.py sync</code> пишет настройки разрешений для Claude Code и Codex. Они должны запрещать клиенту читать архив и файлы секретов. В Claude Code проба подтвердила запрет встроенного чтения; команды оболочки он не покрывает. В Codex сгенерированные настройки пробой пока не проверены.</p>
       <p>В Antigravity, DeepSeek Harness и Hermes Agent технического замка архива нет: там держится только текст правил, пока вы сами не примените фрагмент из <code>.agents/docs/adapters.md</code>.</p>
       <p>Офисные режимы (Claude Cowork, Codex Work) работают в одном проекте и не коммитят. Облачные режимы эту папку не видят.</p>
@@ -110,13 +108,18 @@
 
     <section id="update">
       <h2>Обновление</h2>
-      <p>Автоматического обновления в 0.2 нет. Переход на новый выпуск:</p>
+      <p>С выпуска 0.3.0 установка обновляется на месте (поддержан переход с 0.2.0 и 0.2.0-alpha.2): путь папки, ваши проекты, Порт и настройки в <code>instance.toml</code> сохраняются. Отправьте агенту промпт-визитку (в чате вне установки или временно переключив разрешения клиента на полный доступ, так как профиль <code>s-a</code> в Codex закрывает <code>.agents/</code> от записи):</p>
+      <pre>Обнови установку Союз-Аполлон в папке &lt;путь установки&gt; по инструкции из README: https://github.com/gradovdmitrii/soyuz-apollo</pre>
       <ol>
-        <li>Выполните <code>python sa.py backup</code>.</li>
-        <li>Установите новый выпуск в новую пустую папку и выполните там <code>python sa.py init</code>.</li>
-        <li>Перенесите проекты в новые <code>projects/</code> и <code>system-projects/</code> целыми папками, вместе со скрытой <code>.git</code>. Проект из старой установки примите командой <code>python sa.py init &lt;name&gt; --adopt</code>.</li>
-        <li>Выполните <code>python sa.py sync</code> и <code>python sa.py doctor</code>.</li>
-        <li>Не удаляйте старую папку, пока не проверите проекты в новой.</li>
+        <li>Агент скачивает <code>soyuz-apollo-0.3.0.zip</code> и <code>.sha256</code> со страницы Releases, сверяет контрольную сумму и распаковывает архив во временную папку вне установки.</li>
+        <li>Из папки с распакованным выпуском выполняются команды:
+          <pre>python update.py verify --zip &lt;архив&gt;
+python update.py plan --target &lt;путь установки&gt;
+python update.py apply --target &lt;путь установки&gt;</pre>
+        </li>
+        <li><code>plan</code> ничего не меняет. <code>apply</code> сохраняет заменяемые файлы в <code>.agents/update-backup/</code>, обновляет ядро и запускает <code>sync</code> и <code>doctor</code>; при сбое он сам возвращает прежнее состояние.</li>
+        <li>Если вы правили файл ядра вручную, <code>apply</code> остановится и назовёт конфликт. Агент спросит вас: заменить (<code>--conflicts replace</code>, по умолчанию — ваша версия сохранится в папке отката) или оставить (<code>--conflicts keep</code>).</li>
+        <li>После <code>RESTART-CHAT required</code> или <code>recommended</code> откройте новый чат. Для отмены или восстановления после прерывания используйте <code>python update.py rollback --target &lt;путь установки&gt;</code>. Если откат перезаписал бы свежие правки, он остановится и выведет список файлов.</li>
       </ol>
     </section>
 
@@ -168,7 +171,7 @@ SOFTWARE.</pre>
 
   <footer class="site-footer">
     <div class="wrap guide-footer">
-      <p class="small">© 2026 Дмитрий Градов · Союз-Аполлон 0.2.0 · MIT</p>
+      <p class="small">© 2026 Дмитрий Градов · Союз-Аполлон 0.3.0 · MIT</p>
       <a class="text-link" href="index.html"><span aria-hidden="true">←</span> Вернуться на главную</a>
     </div>
   </footer>
